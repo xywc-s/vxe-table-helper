@@ -1,0 +1,49 @@
+{
+  "name": "@xywc-s/vxe-table-helper",
+  "version": "0.1.0",
+  "description": "a helper for vxe-table",
+  "keywords": [
+    "helper",
+    "vxe-table",
+    "vue"
+  ],
+  "author": {
+    "name": "xywc-s",
+    "email": "xywc_s@foxmail.com",
+    "url": "https://github.com/xywc-s"
+  },
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
+  "files": [
+    "lib",
+    "es"
+  ],
+  "scripts": {
+    "build": "rm -rf es && rm -rf lib && vite build",
+    "pub-ma": "npm version major && git push",
+    "pub-mi": "npm version minor && git push",
+    "pub-pa": "npm version patch && git push"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.0",
+    "@vueuse/core": "^9.1.0",
+    "lodash-es": "^4.17.0",
+    "vxe-table": "^4.0.0",
+    "xe-utils": "^3.0.0",
+    "@xywc-s/utils": "*"
+  },
+  "devDependencies": {
+    "vue": "^3.2.0",
+    "@vueuse/core": "^9.1.0",
+    "lodash-es": "^4.17.0",
+    "vxe-table": "^4.0.0",
+    "xe-utils": "^3.0.0",
+    "@xywc-s/utils": "workspace:*",
+    "@types/lodash-es": "^4.17.6",
+    "typescript": "^4.8.3",
+    "vite": "^3.1.0",
+    "vite-plugin-dts": "^1.4.1"
+  },
+  "license": "MIT"
+}
