@@ -39,7 +39,7 @@
     "lodash-es": "^4.17.0",
     "vxe-table": "^4.0.0",
     "xe-utils": "^3.0.0",
-    "@xywc-s/utils": "workspace:*",
+    "@xywc-s/utils": "*",
     "@types/lodash-es": "^4.17.6",
     "typescript": "^4.8.3",
     "vite": "^3.1.0",
