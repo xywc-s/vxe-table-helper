@@ -1,6 +1,6 @@
 import { reactive, ref, Ref } from 'vue'
 import { get, useToggle } from '@vueuse/core'
-import { assign, cloneDeep, isFunction, merge } from 'lodash-es'
+import { assign, cloneDeep, isFunction, merge, set } from 'lodash-es'
 import { defaultOptions } from './config'
 import type {
   BaseTableOptions,
@@ -34,7 +34,7 @@ export class BaseTable<R = any> {
     // 生成表格选项
     this._options = reactive(cloneDeep(merge(defaultOptions, options)))
     this._filters = this._options?.filters ?? ref({})
-    this._api = this._options?.api
+    this._api = this._options?.api ?? {}
 
     // 没有自定义分页器事件, 初始化默认事件
     if (!this._options?.onPageChange) this._initPagerEvents()
@@ -116,7 +116,7 @@ export class BaseTable<R = any> {
    * @param params 查询接口函数或查询接口的配置对象
    */
   setApi<QR = R>(params: TableApiProps<BaseOptions, QR>) {
-    this._api.query = params
+    set(this._api, 'query', params)
   }
 
   /**
