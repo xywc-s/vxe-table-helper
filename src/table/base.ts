@@ -32,7 +32,7 @@ export class BaseTable<R = any> {
     this._toggleLoading = toggleLoading
 
     // 生成表格选项
-    this._options = reactive(cloneDeep(merge(defaultOptions, options)))
+    this._options = reactive(cloneDeep(merge({ loading: this._loading }, defaultOptions, options)))
     this._filters = this._options?.filters ?? ref({})
     this._api = this._options?.api ?? {}
 
